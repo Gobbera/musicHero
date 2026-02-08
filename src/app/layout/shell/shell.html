@@ -1,0 +1,45 @@
+<div class="shell">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="left">
+        <span class="brand">🎸 {{ appName }}</span>
+      </div>
+  
+      <div class="right">
+        <button pButton type="button" label="Dashboard" icon="pi pi-home" routerLink="/"></button>
+      </div>
+    </header>
+  
+    <!-- SIDE BAR + CONTENT -->
+    <div class="body">
+      <aside class="sidebar">
+        <div class="menu-title">Menu</div>
+  
+        <a class="item" routerLink="/">
+          <i class="pi pi-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+  
+        <!-- Deixe esses desativados por enquanto se você apagou as outras telas -->
+        <div class="item disabled">
+          <i class="pi pi-list-check"></i>
+          <span>Rotinas</span>
+        </div>
+  
+        <div class="item disabled">
+          <i class="pi pi-clock"></i>
+          <span>Sessão</span>
+        </div>
+  
+        <a class="item" routerLink="/exercises">
+            <i class="pi pi-book"></i>
+            <span>Exercícios</span>
+        </a>          
+      </aside>
+  
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  
