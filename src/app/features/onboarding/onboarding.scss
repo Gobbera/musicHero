@@ -1,0 +1,29 @@
+.onboarding-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+}
+
+.onboarding-card {
+  width: 420px;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+p-chip {
+  cursor: pointer;
+}
+
+p-chip.selected {
+  background: #6366f1 !important;
+  color: white;
+}

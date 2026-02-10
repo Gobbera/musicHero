@@ -1,0 +1,48 @@
+<div class="onboarding-container">
+  <p-card class="onboarding-card">
+
+    <h1>Bem-vindo ao MusicHero 🎸</h1>
+    <p>Escolha até 3 opções em cada categoria</p>
+
+    <!-- Instrumento -->
+    <h3>Qual instrumento você toca?</h3>
+    <div class="tags">
+      <p-chip
+        *ngFor="let item of instruments"
+        [label]="item"
+        [class.selected]="selectedInstrument === item"
+        (click)="selectedInstrument = item">
+      </p-chip>
+    </div>
+
+    <!-- Estilos -->
+    <h3>Quais estilos você curte? Selecione até 3.</h3>
+    <div class="tags">
+      <p-chip
+        *ngFor="let style of styles"
+        [label]="style"
+        [class.selected]="selectedStyles.includes(style)"
+        (click)="toggleTag(selectedStyles, style)">
+      </p-chip>
+    </div>
+
+    <!-- Objetivos -->
+    <h3>O que você quer aprender? Selecione até 3.</h3>
+    <div class="tags">
+      <p-chip
+        *ngFor="let goal of goals"
+        [label]="goal"
+        [class.selected]="selectedGoals.includes(goal)"
+        (click)="toggleTag(selectedGoals, goal)">
+      </p-chip>
+    </div>
+
+    <p-button
+      label="Começar"
+      icon="pi pi-arrow-right"
+      [disabled]="!canContinue()"
+      (onClick)="save()">
+    </p-button>
+
+  </p-card>
+</div>

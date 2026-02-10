@@ -1,14 +1,24 @@
 <div class="shell">
     <!-- TOP BAR -->
     <header class="topbar">
-      <div class="left">
-        <span class="brand">🎸 {{ appName }}</span>
-      </div>
-  
-      <div class="right">
-        <button pButton type="button" label="Dashboard" icon="pi pi-home" routerLink="/"></button>
-      </div>
-    </header>
+    <div class="logo">
+      🎸 MusicHero
+    </div>
+
+    <div class="login-actions">
+      <p-button class="sign-in-btn"
+        label="Entrar"
+        severity="secondary"
+        size="small">
+      </p-button>
+
+      <p-button class="sign-up-btn"
+        label="Criar conta"
+        icon="pi pi-user-plus"
+        size="small">
+      </p-button>
+    </div>
+  </header>
   
     <!-- SIDE BAR + CONTENT -->
     <div class="body">
