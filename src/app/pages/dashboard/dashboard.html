@@ -1,0 +1,58 @@
+  <app-shell>
+    <span>asdas</span>
+  </app-shell>
+  <!-- HEADER -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-extrabold mb-1">
+      To Be Guitar Hero 🎸
+    </h1>
+    <p class="text-sm opacity-70">
+      Vamos tocar — prática consistente vence.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid md:grid-cols-2 gap-4">
+
+    <!-- CARD 1 -->
+    <p-card header="Sessão de hoje" class="shadow-lg rounded-2xl">
+      <div class="text-2xl font-extrabold mb-2">
+        {{ minutosHoje }} min
+      </div>
+
+      <div class="text-xs opacity-70 mb-4">
+        Meta simples para manter consistência.
+      </div>
+
+      <div class="flex gap-3">
+        <button
+          pButton
+          type="button"
+          label="Começar"
+          icon="pi pi-play">
+        </button>
+      </div>
+    </p-card>
+
+    <!-- CARD 2 -->
+    <p-card header="Foco" class="shadow-lg rounded-2xl">
+      <div class="text-2xl font-extrabold mb-2">
+        {{ foco }}
+      </div>
+
+      <div class="text-xs opacity-70 mb-4">
+        Escolha um objetivo claro para a sessão.
+      </div>
+
+      <div class="flex gap-3">
+        <button
+          pButton
+          type="button"
+          label="Trocar foco"
+          icon="pi pi-refresh"
+          outlined="true">
+        </button>
+      </div>
+    </p-card>
+
+  </div>

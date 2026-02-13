@@ -1,55 +1,18 @@
-<div class="shell">
-    <!-- TOP BAR -->
-    <header class="topbar">
-    <div class="logo">
-      🎸 MusicHero
-    </div>
+<div class="min-h-screen bg-[#0f0f12] text-[#eaeaf0]">
 
-    <div class="login-actions">
-      <p-button class="sign-in-btn"
-        label="Entrar"
-        severity="secondary"
-        size="small">
-      </p-button>
+  <!-- TOP BAR -->
+  <app-topbar></app-topbar>
 
-      <p-button class="sign-up-btn"
-        label="Criar conta"
-        icon="pi pi-user-plus"
-        size="small">
-      </p-button>
-    </div>
-  </header>
-  
-    <!-- SIDE BAR + CONTENT -->
-    <div class="body">
-      <aside class="sidebar">
-        <div class="menu-title">Menu</div>
-  
-        <a class="item" routerLink="/">
-          <i class="pi pi-chart-line"></i>
-          <span>Dashboard</span>
-        </a>
-  
-        <!-- Deixe esses desativados por enquanto se você apagou as outras telas -->
-        <div class="item disabled">
-          <i class="pi pi-list-check"></i>
-          <span>Rotinas</span>
-        </div>
-  
-        <div class="item disabled">
-          <i class="pi pi-clock"></i>
-          <span>Sessão</span>
-        </div>
-  
-        <a class="item" routerLink="/exercises">
-            <i class="pi pi-book"></i>
-            <span>Exercícios</span>
-        </a>          
-      </aside>
-  
-      <main class="content">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
+  <!-- BODY -->
+  <div class="grid grid-cols-[260px_1fr] min-h-[calc(100vh-56px)]">
+
+    <!-- SIDEBAR -->
+    <app-sidebar></app-sidebar>
+
+    <!-- CONTENT -->
+    <main class="p-5">
+      <router-outlet></router-outlet>
+    </main>
+
   </div>
-  
+</div>

@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "tobeguitarhero": {
+    "musichero": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -62,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tobeguitarhero:build:production"
+              "buildTarget": "musichero:build:production"
             },
             "development": {
-              "buildTarget": "tobeguitarhero:build:development"
+              "buildTarget": "musichero:build:development"
             }
           },
           "defaultConfiguration": "development"
