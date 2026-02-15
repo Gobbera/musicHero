@@ -23,11 +23,9 @@
         *ngFor="let item of instruments"
         [label]="item"
         (click)="selectedInstrument = item"
-        [ngClass]="
-          selectedInstrument === item
-            ? 'bg-indigo-500 text-white border-indigo-500'
-            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-        "
+        [ngClass]="selectedInstrument === item
+          ? '!bg-blue-600 !text-white !border-blue-600'
+          : 'bg-white/5 text-white border-white/10 hover:bg-white/10'"
         class="cursor-pointer border transition duration-200 rounded-full px-3 py-1">
       </p-chip>
     </div>
@@ -44,9 +42,8 @@
         (click)="toggleTag(selectedStyles, style)"
         [ngClass]="
           selectedStyles.includes(style)
-            ? 'bg-indigo-500 text-white border-indigo-500'
-            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-        "
+            ? '!bg-blue-600 !text-white !border-blue-600'
+          : 'bg-white/5 text-white border-white/10 hover:bg-white/10'"
         class="cursor-pointer border transition duration-200 rounded-full px-3 py-1">
       </p-chip>
     </div>
@@ -63,9 +60,8 @@
         (click)="toggleTag(selectedGoals, goal)"
         [ngClass]="
           selectedGoals.includes(goal)
-            ? 'bg-indigo-500 text-white border-indigo-500'
-            : 'bg-white/5 text-white border-white/10 hover:bg-white/10'
-        "
+            ? '!bg-blue-600 !text-white !border-blue-600'
+          : 'bg-white/5 text-white border-white/10 hover:bg-white/10'"
         class="cursor-pointer border transition duration-200 rounded-full px-3 py-1">
       </p-chip>
     </div>

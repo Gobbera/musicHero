@@ -1,29 +1,46 @@
-<aside class="p-4 border-r border-white/5 bg-[#14141a]">
+<aside class="h-screen p-4 border-r border-white/5 bg-[#14141a]">
 
-      <a routerLink="/"
-         class="flex items-center gap-2 px-3 py-2 rounded-xl
-                hover:bg-white/5 transition border border-transparent mb-2">
-        <i class="pi pi-chart-line"></i>
-        <span>Dashboard</span>
-      </a>
+  <a
+    routerLink="/dashboard"
+    routerLinkActive="bg-white/10 border-white/10 text-white"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="flex items-center gap-2 px-3 py-2 rounded-xl
+           hover:bg-white/5 transition border border-transparent mb-2 text-white/80"
+  >
+    <i class="pi pi-chart-line"></i>
+    <span>Dashboard</span>
+  </a>
 
-      <div class="flex items-center gap-2 px-3 py-2 rounded-xl
-                  opacity-40 cursor-not-allowed mb-2">
-        <i class="pi pi-list-check"></i>
-        <span>Rotinas</span>
-      </div>
+  <a
+    routerLink="/routines"
+    routerLinkActive="bg-white/10 border-white/10 text-white"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="flex items-center gap-2 px-3 py-2 rounded-xl
+           hover:bg-white/5 transition border border-transparent mb-2 text-white/80"
+  >
+    <i class="pi pi-chart-line"></i>
+    <span>Rotinas</span>
+  </a>
 
-      <div class="flex items-center gap-2 px-3 py-2 rounded-xl
-                  opacity-40 cursor-not-allowed mb-2">
-        <i class="pi pi-clock"></i>
-        <span>Sessão</span>
-      </div>
+  <a
+    routerLink="/sessions"
+    routerLinkActive="bg-white/10 border-white/10 text-white"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="flex items-center gap-2 px-3 py-2 rounded-xl
+           hover:bg-white/5 transition border border-transparent mb-2 text-white/80"
+  >
+    <i class="pi pi-chart-line"></i>
+    <span>Sessões</span>
+  </a>
 
-      <a routerLink="/exercises"
-         class="flex items-center gap-2 px-3 py-2 rounded-xl
-                hover:bg-white/5 transition border border-transparent">
-        <i class="pi pi-book"></i>
-        <span>Exercícios</span>
-      </a>
+  <a
+    routerLink="/exercicios"
+    routerLinkActive="bg-white/10 border-white/10 text-white"
+    class="flex items-center gap-2 px-3 py-2 rounded-xl
+           hover:bg-white/5 transition border border-transparent text-white/80"
+  >
+    <i class="pi pi-chart-line"></i>
+    <span>Exercícios</span>
+  </a>
 
-    </aside>
+</aside>

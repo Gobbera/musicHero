@@ -3,15 +3,14 @@ import { Component } from '@angular/core';
 
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { ShellComponent } from '../../layout/shell/shell.component';
+import { SessionAnalyticsComponent } from "../../features/session-analytics-component/session-analytics-component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [CardModule,
-            ButtonModule,
-            ShellComponent
-          ],
+    ButtonModule,
+    SessionAnalyticsComponent],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss'],
 })
