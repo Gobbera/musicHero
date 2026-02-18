@@ -1,25 +1,56 @@
-<header class="h-14 flex items-center justify-between px-4 
-                 border-b border-white/5 
-                 bg-[rgba(20,20,26,0.7)] 
-                 backdrop-blur-md 
-                 sticky top-0 z-10">
+<header class="h-14 flex items-center justify-between px-4 border-b border-white/5 backdrop-blur-md sticky top-0 z-10">
 
-    <div class="font-extrabold tracking-wide">
-      🎸 MusicHero
-    </div>
+  <!-- Título -->
+  <div class="font-extrabold tracking-wide flex items-center gap-2">
+    🎸 <span>{{ title }}</span>
+  </div>
 
-    <div class="flex items-center gap-3">
-      <p-button
-        label="Entrar"
-        severity="secondary"
-        size="small"
-        class="!px-3">
-      </p-button>
+  <!-- Botões -->
+  <div class="flex items-center gap-3">
 
-      <p-button
-        label="Criar conta"
-        icon="pi pi-user-plus"
-        size="small">
-      </p-button>
-    </div>
-  </header>
+    <!-- Menu de idioma -->
+    <p-menu #langMenu [model]="languageItems" popup></p-menu>
+
+    <p-button
+      [label]="selectedLang.toUpperCase()"
+      icon="pi pi-language"
+      size="small"
+      severity="secondary"
+      (onClick)="langMenu.toggle($event)">
+    </p-button>
+
+    <!-- Dark mode -->
+    <p-button
+      icon="pi pi-moon"
+      size="small"
+      severity="secondary"
+      (onClick)="toggleDark()">
+    </p-button>
+
+    <!-- Login -->
+    <p-button
+      label="Entrar"
+      severity="secondary"
+      size="small"
+      (onClick)="openLogin()">
+    </p-button>
+
+    <p-button
+      label="Criar conta"
+      icon="pi pi-user-plus"
+      size="small"
+      (onClick)="openRegister()">
+    </p-button>
+
+  </div>
+</header>
+
+<!-- Dialogs -->
+<app-login-dialog
+  [(visible)]="loginVisible"
+  (goToRegister)="openRegister()">
+</app-login-dialog>
+
+<app-register-dialog
+  [(visible)]="registerVisible">
+</app-register-dialog>

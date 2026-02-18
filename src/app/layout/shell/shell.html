@@ -1,16 +1,16 @@
-<div class="min-h-screen bg-[#0f0f12] text-[#eaeaf0]">
+<div class="min-h-screen">
 
   <!-- TOP BAR -->
-  <app-topbar></app-topbar>
+  <app-topbar [title]="pageTitle"></app-topbar>
 
   <!-- BODY -->
   <div class="grid grid-cols-[260px_1fr] min-h-[calc(100vh-56px)]">
 
     <!-- SIDEBAR -->
-    <app-sidebar></app-sidebar>
+    <app-sidebar [items]="sidebarItems" [multiple]="false"></app-sidebar>
 
     <!-- CONTENT -->
-    <main class="p-5"> 
+    <main class="p-5">
       <router-outlet></router-outlet>
     </main>
 

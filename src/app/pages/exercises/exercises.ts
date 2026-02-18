@@ -25,33 +25,24 @@ interface ExerciseRow {
   styleUrls: ['./exercises.scss'],
 })
 export class Exercises implements OnInit {
-  // UI
   tableHeight = '420px';
   skeletonRows = Array.from({ length: 12 });
 
-  // Data state
   loading = signal<boolean>(true);
   exercises = signal<ExerciseRow[]>([]);
   totalRecords = signal<number>(0);
 
   ngOnInit(): void {
-    // deixa o p-table disparar o primeiro onLazyLoad automaticamente
-    // (se não disparar na sua versão, eu te mostro como chamar manualmente)
   }
 
-  // ✅ Lazy load handler
   onLazyLoad(event: TableLazyLoadEvent): void {
     this.loading.set(true);
 
-    const first = event.first ?? 0; // offset
-    const rows = event.rows ?? 12;   // page size
+    const first = event.first ?? 0; 
+    const rows = event.rows ?? 12;   
 
-    // Aqui você chamaria sua API:
-    // this.api.getExercises({ first, rows, sortField, sortOrder, filters }).subscribe(...)
-
-    // Por enquanto: fake "server"
     setTimeout(() => {
-      const all = this.fakeServerData(); // total "no servidor"
+      const all = this.fakeServerData(); 
 
       const page = all.slice(first, first + rows);
 
@@ -71,7 +62,6 @@ export class Exercises implements OnInit {
   }
 
   private fakeServerData(): ExerciseRow[] {
-    // imagine que isso é o banco / backend
     return [
       { id: 1, exercise: 'Alternate Picking (120bpm)', creator: 'MusicHero', difficulty: 'Médio', rating: 4.5 },
       { id: 2, exercise: 'Palm Muting Groove', creator: 'MusicHero', difficulty: 'Fácil', rating: 4.0 },

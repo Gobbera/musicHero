@@ -1,57 +1,42 @@
+<p-splitter layout="vertical" [panelSizes]="[50, 50]" class="h-full">
 
-  <app-session-analytics-component></app-session-analytics-component>
-  <!-- HEADER -->
-  <div class="mb-6">
-    <h1 class="text-3xl font-extrabold mb-1">
-      MusicHero
-    </h1>
-    <p class="text-sm opacity-70">
-      Vamos tocar — prática consistente vence.
-    </p>
-  </div>
+  <ng-template pTemplate="panel">
 
-  <!-- GRID -->
-  <div class="grid md:grid-cols-2 gap-4">
+    <p-splitter [panelSizes]="[50,50]" class="">
 
-    <!-- CARD 1 -->
-    <p-card header="Sessão de hoje" class="shadow-lg rounded-2xl">
-      <div class="text-2xl font-extrabold mb-2">
-        {{ 20}} min
+      <ng-template pTemplate="panel">
+        <p-card header="Sessão de hoje" class="h-full shadow-lg rounded-2xl p-4">
+          <div class="text-2xl font-extrabold mb-2">20 min</div>
+          <button pButton label="Começar" icon="pi pi-play"></button>
+        </p-card>
+      </ng-template>
+
+      <ng-template pTemplate="panel">
+        <p-card header="Foco" class="h-full shadow-lg rounded-2xl p-4">
+          <div class="text-2xl font-extrabold mb-2">1</div>
+          <button pButton label="Trocar foco" icon="pi pi-refresh"></button>
+        </p-card>
+      </ng-template>
+
+    </p-splitter>
+
+  </ng-template>
+
+  <ng-template pTemplate="panel">
+    <p-splitter [panelSizes]="[30,70]" class="h-full">
+    <ng-template pTemplate="panel">
+      <div class="p-2 h-full overflow-auto">
+        <app-session-analytics-component></app-session-analytics-component>
       </div>
+    </ng-template>
 
-      <div class="text-xs opacity-70 mb-4">
-        Meta simples para manter consistência.
-      </div>
+    <ng-template pTemplate="panel">
+        <p-card header="Sessão de hoje" class="h-full shadow-lg rounded-2xl p-4">
+          <div class="text-2xl font-extrabold mb-2">20 min</div>
+          <button pButton label="Começar" icon="pi pi-play"></button>
+        </p-card>
+    </ng-template>
 
-      <div class="flex gap-3">
-        <button
-          pButton
-          type="button"
-          label="Começar"
-          icon="pi pi-play">
-        </button>
-      </div>
-    </p-card>
-
-    <!-- CARD 2 -->
-    <p-card header="Foco" class="shadow-lg rounded-2xl">
-      <div class="text-2xl font-extrabold mb-2">
-        {{ 1 }}
-      </div>
-
-      <div class="text-xs opacity-70 mb-4">
-        Escolha um objetivo claro para a sessão.
-      </div>
-
-      <div class="flex gap-3">
-        <button
-          pButton
-          type="button"
-          label="Trocar foco"
-          icon="pi pi-refresh"
-          outlined="true">
-        </button>
-      </div>
-    </p-card>
-      
-  </div>
+  </p-splitter>
+</ng-template>
+</p-splitter>

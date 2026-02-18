@@ -66,7 +66,7 @@ export class SessionAnalyticsComponent {
           beginAtZero: true,
           ticks: {
             callback: (value: any) =>
-              Number(value).toLocaleString('pt-BR') // 5.000 / 10.000 etc
+              Number(value).toLocaleString('pt-BR')
           }
         }
       }

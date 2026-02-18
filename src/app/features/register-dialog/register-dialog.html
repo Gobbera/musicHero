@@ -1,0 +1,85 @@
+<p-dialog
+  header="Criar Conta"
+  [modal]="true"
+  [(visible)]="visible"
+  (visibleChange)="visibleChange.emit($event)"
+  [blockScroll]="true"
+  [style]="{ width: '30rem' }"
+>
+
+  <span class="">
+    Crie sua conta no 🎸 MusicHero
+  </span>
+
+  <!-- Nome -->
+    <p-floatlabel variant="on" class="w-auto m-3">
+    <input pInputText pTooltip="Nome" id="name" class="w-full" autocomplete="name" />
+    <label for="name">Nome</label>
+    </p-floatlabel>
+
+    <!-- Telefone -->
+    <p-floatlabel variant="on" class="w-auto m-3">
+    <input pInputText pTooltip="Telefone" id="phone" class="w-full" autocomplete="tel" inputmode="tel" />
+    <label for="phone">Telefone</label>
+    </p-floatlabel>
+
+    <!-- Email -->
+    <p-floatlabel variant="on" class="w-auto m-3">
+    <input pInputText pTooltip="Email" id="email" class="w-full" autocomplete="email" inputmode="email" />
+    <label for="email">Email</label>
+    </p-floatlabel>
+    
+    <!-- Senha -->
+    <div class="flex flex-col gap-2 mb-3 m-3">
+    <label for="password">Senha</label>
+    <p-password
+        inputId="password"
+        [(ngModel)]="password"
+        [toggleMask]="true"
+        [feedback]="true"
+        placeholder="Crie uma senha"
+        styleClass="w-full"
+        [inputStyle]="{ width: '100%' }"
+    ></p-password>
+    </div>
+
+
+  <!-- Confirmar Senha -->
+    <div class="flex flex-col gap-2 mb-3 m-3">
+    <label for="confirmPassword">Confirmar senha</label>
+    <p-password
+        inputId="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        [toggleMask]="true"
+        [feedback]="false"
+        placeholder="Repita a senha"
+        styleClass="w-full"
+        [inputStyle]="{ width: '100%' }"
+    ></p-password>
+    </div>
+
+
+  <!-- Termos -->
+  <div class="flex items-start gap-3 m-5">
+    <p-checkbox [(ngModel)]="acceptTerms" binary="true"></p-checkbox>
+
+    <span class="">
+      Aceito os
+      <span class="underline cursor-pointer">Termos de Uso</span>
+      e
+      <span class="underline cursor-pointer">Política de Privacidade</span>.
+    </span>
+  </div>
+
+  <!-- Botões -->
+  <div class="flex justify-end gap-2 m-3">
+    <p-button label="Cancelar" severity="secondary" (onClick)="close()" />
+    <p-button
+      label="Criar conta"
+      icon="pi pi-user-plus"
+      [disabled]="!canRegister()"
+      (onClick)="register()"
+    />
+  </div>
+
+</p-dialog>
